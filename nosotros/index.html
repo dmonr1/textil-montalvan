@@ -1,33 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Nosotros | Textilería Montalva</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Textilería Montalván</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <div><strong>Textilería Montalva</strong></div>
-    <div>
-      <a href="/">Inicio</a>
-      <a href="/nosotros">Nosotros</a>
-      <a href="/productos">Productos</a>
-      <a href="/servicios">Servicios</a>
-      <a href="/contacto">Contacto</a>
-    </div>
-  </nav>
-</header>
+    <header>
+        <nav class="container">
 
-<section class="section">
-  <h1>Sobre Nosotros</h1>
-  <p>Somos una empresa textil dedicada a la venta y distribución de telas industriales y comerciales.</p>
-</section>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
-<footer>
-  <p>© 2026 Textilería Montalva</p>
-</footer>
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/imgs/logo-header.png" alt="Textilería Montalván">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#catalogo">Catalogo</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Telas de punto</a></li>
+                        <li><a href="#">Telas de alta rotación</a></li>
+                        <li><a href="#">Telas & fluidas</a></li>
+                        <li><a href="#">Telas estructuradas</a></li>
+                        <li><a href="#">Telas de abrigo</a></li>
+                        <li><a href="#">Telas de moda</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="nosotros/index.html">Nosotros</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Historia</a></li>
+                        <li><a href="#">Misión</a></li>
+                        <li><a href="#">Visión</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contacto</a></li>
+
+                <li><a href="#">Blog</a></li>
+                <span class="menu-line"></span>
+            </ul>
+
+            <div class="header-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="hero-interno">
+        <div class="hero-contenido">
+            <h1>NOSOTROS</h1>
+            <p>Tradición, calidad y confianza en cada tela</p>
+        </div>
+    </section>
+
+    <section class="nosotros-content">
+        <div class="container">
+            <h2>Nuestra Historia</h2>
+            <p>
+                Textilería Montalván nace con el propósito de ofrecer telas de alta calidad
+                para el mercado peruano...
+            </p>
+
+            <h2>Misión</h2>
+            <p>
+                Brindar soluciones textiles innovadoras y de calidad...
+            </p>
+
+            <h2>Visión</h2>
+            <p>
+                Convertirnos en la textilería líder del mercado...
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <!-- mismo footer -->
+    </footer>
 
 </body>
+
+<script src="../assets/js/script1.js" defer></script>
 </html>
