@@ -228,5 +228,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  document.querySelectorAll('.gramaje-item').forEach(item => {
+    item.addEventListener('click', function () {
+
+        document.querySelectorAll('.gramaje-item')
+            .forEach(el => el.classList.remove('active'));
+
+        this.classList.add('active');
+
+    });
+});
 
 });
