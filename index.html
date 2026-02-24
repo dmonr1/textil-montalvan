@@ -70,18 +70,76 @@
         </nav>
     </header>
 
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar productos...">
+            <i class="fa-solid fa-xmark close-search"></i>
+        </div>
+    </div>
+
+    <div class="overlay-search"></div>
+
+
+
     <div class="sidebar">
-        <div class="sidebar-close">
-            <i class="fa-solid fa-xmark"></i>
+
+        <!-- SIDEBAR PRINCIPAL -->
+        <div class="sidebar-main active">
+            <div class="sidebar-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="has-submenu" data-target="submenu-catalogo">
+                    <span>Catalogo</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+
+                <li class="has-submenu" data-target="submenu-nosotros">
+                    <span>Nosotros</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </div>
 
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Catalogo</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
+        <!-- SUBMENU CATALOGO -->
+        <div class="sidebar-submenu" id="submenu-catalogo">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Telas de punto</a></li>
+                <li><a href="#">Telas alta rotación</a></li>
+                <li><a href="#">Telas fluidas</a></li>
+                <li><a href="#">Telas estructuradas</a></li>
+                <li><a href="#">Telas de abrigo</a></li>
+                <li><a href="#">Telas de moda</a></li>
+            </ul>
+        </div>
+
+        <!-- SUBMENU NOSOTROS -->
+        <div class="sidebar-submenu" id="submenu-nosotros">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Misión</a></li>
+                <li><a href="#">Visión</a></li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="overlay"></div>
@@ -209,11 +267,89 @@
         </div>
     </section>
 
+    <section class="mejor-semana">
+
+        <div class="titulo-seccion">
+            <h3 class="sub">Mejor de la semana</h3>
+            <h2>LO MÁS VENDIDO!</h2>
+        </div>
+
+        <div class="producto-destacado">
+
+            <!-- GALERÍA 4 IMÁGENES -->
+            <div class="galeria-grid">
+
+                <div class="img-box">
+                    <img src="assets/imgs/modelo/modelo-1.png">
+                </div>
+
+                <div class="img-box">
+                    <img src="assets/imgs/modelo/modelo-2.png">
+                </div>
+
+                <div class="img-box">
+                    <img src="assets/imgs/modelo/modelo-3.png">
+                </div>
+
+                <div class="img-box">
+                    <img src="assets/imgs/modelo/modelo-4.png">
+                </div>
+
+            </div>
+
+            <!-- INFO PRODUCTO -->
+            <div class="info-producto">
+
+                <h3>Tela Premium Algodón</h3>
+
+                <p class="colores-titulo">Colores disponibles</p>
+
+                <div class="colores">
+                    <span class="color" style="background: yellow;"></span>
+                    <span class="color" style="background: orange;"></span>
+                    <span class="color" style="background: #333;"></span>
+                    <span class="color" style="background: #7c4dff;"></span>
+                </div>
+
+                <div class="botones-producto">
+                    <button class="btn-cuadrado">CONTÁCTANOS</button>
+                </div>
+
+                <div class="descripcion-wrapper">
+
+                    <div class="descripcion-toggle">
+                        <span>DESCRIPCIÓN</span>
+                        <span class="icono">+</span>
+                    </div>
+                
+                    <div class="descripcion-contenido">
+                        <p>
+                            Tela de alta calidad ideal para confecciones modernas, diseñada para ofrecer
+                            comodidad, frescura y durabilidad en cada uso.
+                        </p>
+                
+                        <ul class="lista-especificaciones">
+                            <li><strong>Composición:</strong> 100% algodón premium</li>
+                            <li><strong>Textura:</strong> Suave al tacto</li>
+                            <li><strong>Transpirabilidad:</strong> Alta</li>
+                            <li><strong>Resistencia:</strong> Conserva forma y color tras los lavados</li>
+                            <li><strong>Uso recomendado:</strong> Prendas casuales y urbanas</li>
+                        </ul>
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <section class="visita-local">
         <img src="assets/imgs/fondo-2.jpg" alt="Local Textilería Montalván" class="fondo-img">
-    
+
         <div class="overlay"></div>
-    
+
         <div class="contenido-visita">
             <h2>¡Visítanos en Nuestro Local!</h2>
             <p>Ven y descubre nuestra amplia variedad de telas y asesoramiento personalizado.</p>
