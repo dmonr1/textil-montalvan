@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | Textilería Montalván</title>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/imgs/catalogo/withlove.png">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/nosotros.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +28,7 @@
             </div>
 
             <div class="logo">
-                <a href="/">
+                <a href="../index.html">
                     <img src="/assets/imgs/logo-header.png" alt="Textilería Montalván">
                 </a>
             </div>
@@ -40,7 +48,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="nosotros/index.html">Nosotros</a>
+                    <a href="../../nosotros/#">Nosotros</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Historia</a></li>
                         <li><a href="#">Misión</a></li>
@@ -61,38 +69,186 @@
         </nav>
     </header>
 
-    <section class="hero-interno">
-        <div class="hero-contenido">
-            <h1>NOSOTROS</h1>
-            <p>Tradición, calidad y confianza en cada tela</p>
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar productos...">
+            <i class="fa-solid fa-xmark close-search"></i>
+        </div>
+    </div>
+
+    <div class="overlay-search"></div>
+
+
+
+    <div class="sidebar">
+
+        <!-- SIDEBAR PRINCIPAL -->
+        <div class="sidebar-main active">
+            <div class="sidebar-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="has-submenu" data-target="submenu-catalogo">
+                    <span>Catalogo</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+
+                <li class="has-submenu" data-target="submenu-nosotros">
+                    <span>Nosotros</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+
+        <!-- SUBMENU CATALOGO -->
+        <div class="sidebar-submenu" id="submenu-catalogo">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Telas de punto</a></li>
+                <li><a href="#">Telas alta rotación</a></li>
+                <li><a href="#">Telas fluidas</a></li>
+                <li><a href="#">Telas estructuradas</a></li>
+                <li><a href="#">Telas de abrigo</a></li>
+                <li><a href="#">Telas de moda</a></li>
+            </ul>
+        </div>
+
+        <!-- SUBMENU NOSOTROS -->
+        <div class="sidebar-submenu" id="submenu-nosotros">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Misión</a></li>
+                <li><a href="#">Visión</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- HERO NOSOTROS -->
+    <section class="hero-nosotros">
+        <h1>Sobre Nosotros</h1>
+        <p>Tradición, calidad y pasión por las telas</p>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="historia">
+        <div class="container-nosotros">
+            <div class="texto">
+                <h2>Nuestra Historia</h2>
+                <p>
+                    En Textilería Montalván llevamos años dedicados al rubro textil en Lima,
+                    ofreciendo telas de alta calidad para empresas y emprendedores.
+                </p>
+                <p>
+                    Nuestro compromiso es brindar variedad, asesoría personalizada
+                    y productos que superen expectativas.
+                </p>
+            </div>
+
+            <div class="imagen">
+                <img src="../assets/imgs/fondo-1.jpg" alt="Historia">
+            </div>
         </div>
     </section>
 
-    <section class="nosotros-content">
-        <div class="container">
-            <h2>Nuestra Historia</h2>
-            <p>
-                Textilería Montalván nace con el propósito de ofrecer telas de alta calidad
-                para el mercado peruano...
-            </p>
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="mision-vision">
+        <div class="mv-grid">
 
-            <h2>Misión</h2>
-            <p>
-                Brindar soluciones textiles innovadoras y de calidad...
-            </p>
+            <div class="card-mv">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Misión</h3>
+                <p>
+                    Proveer telas de alta calidad con un servicio cercano y confiable.
+                </p>
+            </div>
 
-            <h2>Visión</h2>
-            <p>
-                Convertirnos en la textilería líder del mercado...
-            </p>
+            <div class="card-mv">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Visión</h3>
+                <p>
+                    Ser la textilería referente en Lima por innovación y excelencia.
+                </p>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <!-- mismo footer -->
+        <div class="footer-grid">
+
+            <div>
+                <img src="assets/imgs/logo_pie.jpg" alt="Logo">
+            </div>
+
+            <div>
+                <ul>
+                    <li>Estampación</li>
+                    <li>Políticas de privacidad</li>
+                    <li>Términos y condiciones</li>
+                    <li>Políticas de Cookies</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><strong>LÍNEAS:</strong></li>
+                    <li>Telas de punto</li>
+                    <li>Telas de alta rotación</li>
+                    <li>Telas & fluidas</li>
+                    <li>Telas estructuradas</li>
+                    <li>Telas de abrigo</li>
+                    <li>Telas de moda</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><strong>Contacto</strong></li>
+                    <li><i class="fa-solid fa-phone"></i> 940203534 - 940203534</li>
+                    <li><i class="fa-regular fa-envelope"></i> info@textilmontalvan.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> La Victoria, Lima - Perú</li>
+                </ul>
+
+                <div class="social" style="margin-top:15px;">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copy">
+            © 2026 Textilería Montalván - Todos los derechos reservados
+        </div>
     </footer>
+
+    <a href="https://wa.me/51940203534" class="btn-whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="../assets/js/nosotros.js" defer></script>
 
 </body>
 
-<script src="../assets/js/script1.js" defer></script>
 </html>

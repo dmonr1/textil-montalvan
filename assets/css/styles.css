@@ -1310,3 +1310,72 @@ footer strong {
 
 }
 
+
+
+
+
+
+
+
+
+
+.hero-nosotros {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('../imgs/fondo-2.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-nosotros h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.historia {
+    padding: 80px 10%;
+}
+
+.container-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.container-nosotros img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.mision-vision {
+    padding: 80px 10%;
+    background: #f5f5f5;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.card-mv {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.card-mv:hover {
+    transform: translateY(-10px);
+}
+
+.card-mv i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
