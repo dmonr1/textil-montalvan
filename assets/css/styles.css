@@ -981,13 +981,13 @@ footer strong {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 10px;
-    max-width: 320px; 
+    max-width: 320px;
 }
 
 .color {
     width: 30px;
     height: 30px;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid #ddd;
@@ -1046,7 +1046,7 @@ footer strong {
     color: #000 !important;
 }
 
-.descripcion-toggle span{
+.descripcion-toggle span {
     color: #000 !important;
 }
 
@@ -1153,7 +1153,7 @@ footer strong {
 
 @media (max-width: 900px) {
 
-    .producto-destacado {   
+    .producto-destacado {
         grid-template-columns: 1fr;
         gap: 50px;
     }
@@ -1170,10 +1170,11 @@ footer strong {
     }
 
     .img-box {
-        aspect-ratio: 3 / 4; 
+        aspect-ratio: 3 / 4;
     }
 
-}   
+}
+
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -1222,7 +1223,7 @@ footer strong {
     align-items: center;
     justify-content: center;
     font-size: 26px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: 0.3s ease;
     z-index: 9999;
@@ -1230,7 +1231,7 @@ footer strong {
 
 .btn-whatsapp:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 768px) {
@@ -1310,72 +1311,266 @@ footer strong {
 
 }
 
-
-
-
-
-
-
-
-
-
 .hero-nosotros {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    height: 50vh;
+    max-height: 462px;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
                 url('../imgs/fondo-2.jpg') center/cover no-repeat;
+    border-radius: 28px;
+    margin: 50px auto;
+    width: 95%;
+    max-width: 1100px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     color: white;
-    text-align: center;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.18);
 }
 
-.hero-nosotros h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.historia {
-    padding: 80px 10%;
-}
-
-.container-nosotros {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+.hero-container {
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.container-nosotros img {
-    width: 100%;
-    border-radius: 12px;
+/* IZQUIERDA */
+.hero-left {
+    max-width: 550px;
 }
 
-.mision-vision {
-    padding: 80px 10%;
-    background: #f5f5f5;
+.hero-badge {
+    display: inline-flex;
+    align-items: center;    
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-.mv-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+.hero-left h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
-.card-mv {
-    background: white;
-    padding: 40px;
-    border-radius: 16px;
-    text-align: center;
+.hero-left p {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #c9975b;
+    padding: 14px 28px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    background: #b88545;
+}
+
+/* ===============================
+   NOSOTROS MODERNO
+=================================*/
+
+.nosotros {
+    background: #eeeeee;
+
+}
+
+.nosotros-tit {
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.nosotros-modern {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 180px;
+    align-items: center;
+}
+
+/* FILAS */
+.row-modern {
+    position: relative;
+    max-width: 95%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.row-modern.reverse {
+    flex-direction: row-reverse;
+}
+
+/* CARD BASE */
+.card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 14px 16px #0000000f;
     transition: 0.4s ease;
 }
 
-.card-mv:hover {
-    transform: translateY(-10px);
+/* ===============================
+   CONTROL INDIVIDUAL
+   (EDITAS AQUÍ)
+=================================*/
+
+/* BLOQUE 1 */
+.historia-img {
+    width: 625px;
+    height: 520px;
+    transform: translateY(40px);
+    z-index: 1;
 }
 
-.card-mv i {
-    font-size: 40px;
+.historia-text {
+    width: 495px;
+    min-height: 552px;
+    transform: translateY(-40px);
+    margin-left: -100px;
+    padding: 70px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BLOQUE 2 */
+.mision-img {
+    width: 625px;
+    height: 520px;
+    /* ✅ altura fija real */
+    transform: translateY(30px);
+    box-shadow: none;
+    z-index: 1;
+
+}
+
+.mision-text {
+    width: 495px;
+    height: 552px;
+    margin-right: -80px;
+    transform: translateY(-50px);
+
+    padding: 70px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BLOQUE 3 */
+.vision-img {
+    width: 625px;
+    height: 625px;
+    transform: translateY(-70px);
+    z-index: 1;
+}
+
+.vision-text {
+    width: 495px;
+    min-height: 552px;
+    transform: translateY(70px);
+    margin-left: -150px;
+    padding: 70px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-3 {
+    margin-top: 40px;
+}
+
+/* ===============================
+   IMAGEN
+=================================*/
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-img-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: right;
+}
+
+/* ===============================
+   TEXTO
+=================================*/
+
+.card-content i {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: #c9975b;
+}
+
+.card-content h2 {
+    font-size: 34px;
     margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* ===============================
+   RESPONSIVE POLAROID
+=================================*/
+
+@media (max-width: 1100px) {
+
+    .row-modern {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 0;
+    }
+
+    .card {
+        width: 92% !important;
+        height: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .card-img {
+        border-radius: 28px 28px 0 0;
+    }
+
+    .card-content {
+        border-radius: 0 0 28px 28px;
+        margin-top: -20px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
 }
