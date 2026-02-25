@@ -1406,7 +1406,7 @@ footer strong {
     padding: 100px 0;
     display: flex;
     flex-direction: column;
-    gap: 180px;
+    gap: 150px;
     align-items: center;
 }
 
@@ -1498,10 +1498,6 @@ footer strong {
     flex-direction: column;
 }
 
-.card-3 {
-    margin-top: 40px;
-}
-
 /* ===============================
    IMAGEN
 =================================*/
@@ -1573,4 +1569,77 @@ footer strong {
         padding: 40px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     }
+}
+
+
+/* HERO ANIMACIÓN INICIAL */
+
+.hero-left > * {
+    opacity: 1;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-left > *:nth-child(1) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.6s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================
+   ESTADO INICIAL (OCULTOS)
+===================================== */
+
+.row-modern .card-img,
+.row-modern .card-img-2,
+.row-modern .card-content {
+    opacity: 0;
+    transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.8s ease;
+    will-change: transform, opacity;
+}
+
+/* BLOQUE NORMAL */
+.row-modern .card-img,
+.row-modern .card-img-2 {
+    transform: translateX(-120px);
+}
+
+.row-modern .card-content {
+    transform: translateX(120px);
+}
+
+/* BLOQUE REVERSE */
+.row-modern.reverse .card-img,
+.row-modern.reverse .card-img-2 {
+    transform: translateX(120px);
+}
+
+.row-modern.reverse .card-content {
+    transform: translateX(-120px);
+}
+
+/* ACTIVO */
+.row-modern.show .card-img,
+.row-modern.show .card-img-2,
+.row-modern.show .card-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay elegante para texto */
+.row-modern.show .card-content {
+    transition-delay: 0.6s;
+}
+
+/* Texto ligeramente más arriba */
+.row-modern .card-content {
+    position: relative;
+    top: -70px;
 }

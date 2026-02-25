@@ -24,25 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    
-  const menu = document.querySelector(".menu");
-  const menuItems = document.querySelectorAll(".menu > li > a");
-  const menuLine = document.querySelector(".menu-line");
 
-  menuItems.forEach(link => {
-    link.addEventListener("mouseenter", () => {
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".menu > li > a");
+    const menuLine = document.querySelector(".menu-line");
 
-      const linkRect = link.getBoundingClientRect();
-      const menuRect = menu.getBoundingClientRect();
+    menuItems.forEach(link => {
+        link.addEventListener("mouseenter", () => {
 
-      menuLine.style.width = linkRect.width + "px";
-      menuLine.style.left = (linkRect.left - menuRect.left) + "px";
+            const linkRect = link.getBoundingClientRect();
+            const menuRect = menu.getBoundingClientRect();
+
+            menuLine.style.width = linkRect.width + "px";
+            menuLine.style.left = (linkRect.left - menuRect.left) + "px";
+        });
     });
-  });
 
-  menu.addEventListener("mouseleave", () => {
-    menuLine.style.width = "0";
-  });
+    menu.addEventListener("mouseleave", () => {
+        menuLine.style.width = "0";
+    });
 
     const toggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
@@ -66,53 +66,73 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const submenuTriggers = document.querySelectorAll('.has-submenu');
-  const submenus = document.querySelectorAll('.sidebar-submenu');
-  const sidebarMain = document.querySelector('.sidebar-main');
-  const backButtons = document.querySelectorAll('.back-btn');
+    const submenus = document.querySelectorAll('.sidebar-submenu');
+    const sidebarMain = document.querySelector('.sidebar-main');
+    const backButtons = document.querySelectorAll('.back-btn');
 
-  submenuTriggers.forEach(item => {
-    item.addEventListener('click', () => {
-      const targetId = item.dataset.target;
-      const submenu = document.getElementById(targetId);
+    submenuTriggers.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.dataset.target;
+            const submenu = document.getElementById(targetId);
 
-      sidebarMain.classList.add('hide');
-      submenu.classList.add('active');
+            sidebarMain.classList.add('hide');
+            submenu.classList.add('active');
+        });
     });
-  });
 
-  backButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      submenus.forEach(menu => menu.classList.remove('active'));
-      sidebarMain.classList.remove('hide');
+    backButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            submenus.forEach(menu => menu.classList.remove('active'));
+            sidebarMain.classList.remove('hide');
+        });
     });
-  });
 
-  const searchIcon = document.querySelector('.header-icons .fa-magnifying-glass');
-  const searchBar = document.querySelector('.search-bar');
-  const overlaySearch = document.querySelector('.overlay-search');
-  const closeSearch = document.querySelector('.close-search');
+    const searchIcon = document.querySelector('.header-icons .fa-magnifying-glass');
+    const searchBar = document.querySelector('.search-bar');
+    const overlaySearch = document.querySelector('.overlay-search');
+    const closeSearch = document.querySelector('.close-search');
 
-  function openSearch() {
-    searchBar.classList.add('active');
-    overlaySearch.classList.add('active');
-    document.body.classList.add('no-scroll');
-  }
-
-  function closeSearchBar() {
-    searchBar.classList.remove('active');
-    overlaySearch.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-  }
-
-  searchIcon.addEventListener('click', openSearch);
-  closeSearch.addEventListener('click', closeSearchBar);
-  overlaySearch.addEventListener('click', closeSearchBar);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-      closeSearchBar();
+    function openSearch() {
+        searchBar.classList.add('active');
+        overlaySearch.classList.add('active');
+        document.body.classList.add('no-scroll');
     }
-  });
 
+    function closeSearchBar() {
+        searchBar.classList.remove('active');
+        overlaySearch.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+
+    searchIcon.addEventListener('click', openSearch);
+    closeSearch.addEventListener('click', closeSearchBar);
+    overlaySearch.addEventListener('click', closeSearchBar);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            closeSearchBar();
+        }
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const rows = document.querySelectorAll(".row-modern");
+
+    const observer = new IntersectionObserver((entries, obs) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+            }
+
+        });
+
+    }, { threshold: 0.4 });
+
+    rows.forEach(row => observer.observe(row));
 
 });
