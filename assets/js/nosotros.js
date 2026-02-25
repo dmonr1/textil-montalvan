@@ -136,3 +136,15 @@ document.addEventListener("DOMContentLoaded", () => {
     rows.forEach(row => observer.observe(row));
 
 });
+
+const flipCards = document.querySelectorAll(".flip-card");
+
+flipCards.forEach(card => {
+    const buttons = card.querySelectorAll(".flip-btn");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            card.classList.toggle("active");
+        });
+    });
+});
