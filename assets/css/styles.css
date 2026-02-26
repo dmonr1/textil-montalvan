@@ -405,7 +405,7 @@ header:hover .menu-line {
 }
 
 header:hover {
-    background: #eeeeee;
+    background: #f5f5f5;
 }
 
 header:hover .menu a,
@@ -1755,6 +1755,11 @@ footer strong {
     margin: -85px auto 20px auto;
 }
 
+#historia,
+#mision,
+#vision {
+    scroll-margin-top: 300px;
+}
 
 @media (max-width: 768px) {
 
