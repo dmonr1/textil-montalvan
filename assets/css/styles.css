@@ -1892,7 +1892,10 @@ footer strong {
     .nosotros-tit {
         margin-top: 40px;
     }
-
+    
+    .hero-nosotros {
+        height: auto;
+    }
 
     #historia{
         scroll-margin-top: 200px;
