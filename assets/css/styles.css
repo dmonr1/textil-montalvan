@@ -1241,8 +1241,8 @@ footer strong {
 =================================*/
 
 .hero-nosotros {
-    height: 50vh;
-    max-height: 462px;
+    height: 58vh;
+    max-height: 506px;
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
         url('../imgs/fondo-2.jpg') center/cover no-repeat;
     border-radius: 28px;
@@ -1761,6 +1761,8 @@ footer strong {
     scroll-margin-top: 300px;
 }
 
+
+
 @media (max-width: 768px) {
 
     .lineas {
@@ -1882,7 +1884,6 @@ footer strong {
 
     .line-decor-3 {
         margin: -140px auto -76px auto;
-
     }
 
     .historia-text {
@@ -1892,16 +1893,263 @@ footer strong {
     .nosotros-tit {
         margin-top: 40px;
     }
-    
+
     .hero-nosotros {
         height: auto;
     }
 
-    #historia{
+    #historia {
         scroll-margin-top: 200px;
     }
 
-    #mision, #vision{
+    #mision,
+    #vision {
         scroll-margin-top: 180px;
     }
+}
+
+
+.svg-01 {
+    height: 70px !important;
+}
+
+
+.svg-02 {
+    height: 150px;
+    overflow: hidden;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: -1;
+}
+
+
+/* =========================
+   SPLIT CONTACT
+========================= */
+
+.contact-split {
+    padding: 80px 0% 0px 8%;
+    background: #9265f0;
+    height: 80vh;
+}
+
+.split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    gap: 80px;
+    height: 100%;
+}
+
+/* IZQUIERDA */
+.split-content {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 120px;
+    max-width: 515px;
+    color: white;
+}
+
+.contact-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.split-content h2 {
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.contact-line {
+    width: 80px;
+    height: 2px;
+    background: #000;
+    margin-bottom: 25px;
+}
+
+.split-content p {
+    color: #ffffff;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-contact-modern {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-contact-modern:hover {
+    background: #333;
+}
+
+.split-form {
+    background: #212121;
+    padding: 75px 100px 75px 100px;
+    border-top-left-radius: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: -30px 0 80px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTENEDOR DEL LOGO */
+.form-logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* IMAGEN LOGO */
+.form-logo img {
+    width: 160px;
+    max-width: 100%;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+/* Pequeño efecto sutil */
+.form-logo img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* FORM */
+.form-dark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* INPUTS SOLO LÍNEA */
+.form-dark input,
+.form-dark textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding: 14px 0;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+/* Placeholder blanco */
+.form-dark input::placeholder,
+.form-dark textarea::placeholder {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+/* Efecto focus elegante */
+.form-dark input:focus,
+.form-dark textarea:focus {
+    border-bottom: 3px solid #9265f0;
+}
+
+/* Quitar resize feo */
+.form-dark textarea {
+    resize: none;
+}
+
+/* BOTÓN TRANSPARENTE CON BORDE */
+.form-dark button {
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    /* leve redondeo */
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover elegante */
+.form-dark button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* =========================
+   DARK CONTACT CARDS
+========================= */
+
+.contact-dark {
+    background: #212121;
+    padding: 120px 8%;
+}
+
+.dark-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 280px;
+    transition: 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card i {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contact-card h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================
+   MAP SECTION
+========================= */
+
+.contact-map-section {
+    background: #fff;
+    padding: 120px 8%;
+}
+
+.map-wrapper {
+    max-width: 1300px;
+    margin: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
 }
