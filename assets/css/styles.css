@@ -1360,7 +1360,7 @@ footer strong {
     align-items: center;
 }
 
-.line{
+.line {
     border: 1px solid #000;
     width: 60%;
     display: flex;
@@ -1683,7 +1683,7 @@ footer strong {
     will-change: transform, opacity;
 }
 
-.row-modern .card-img,  
+.row-modern .card-img,
 .row-modern .card-img-2 {
     transform: translateX(-120px);
 }
@@ -1730,7 +1730,7 @@ footer strong {
 }
 
 .section-divider path {
-    fill: #ffffff; 
+    fill: #ffffff;
 }
 
 .line-decor {
@@ -1852,6 +1852,13 @@ footer strong {
 
     .card-img {
         border-radius: 28px 28px 0 0;
+        height: 280px !important;
+
+    }
+
+    .card-img-2 img {
+        height: 280px !important;
+
     }
 
     .card-content {
@@ -1862,7 +1869,7 @@ footer strong {
     }
 
     .nosotros-modern {
-        padding: 30px 0;
+        padding: 10px 0;
     }
 
     .hero-nosotros {
@@ -1870,11 +1877,28 @@ footer strong {
     }
 
     .line-decor-2 {
-        margin: -120px auto -50px auto;
+        margin: -140px auto -76px auto;
     }
 
-    .line-decor-3{
-        margin: -120px auto -50px auto;
+    .line-decor-3 {
+        margin: -140px auto -76px auto;
 
+    }
+
+    .historia-text {
+        min-height: 511px;
+    }
+
+    .nosotros-tit {
+        margin-top: 40px;
+    }
+
+
+    #historia{
+        scroll-margin-top: 200px;
+    }
+
+    #mision, #vision{
+        scroll-margin-top: 180px;
     }
 }

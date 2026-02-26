@@ -154,12 +154,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroLeft = document.querySelector(".hero-left");
     const titulo = document.querySelector(".nosotros-tit");
 
-    // 1️⃣ Animación del contenido del hero
     setTimeout(() => {
         heroLeft.classList.add("animate");
     }, 600);
 
-    // 2️⃣ Después aparece el título
     setTimeout(() => {
         titulo.classList.add("show");
     }, 1900);

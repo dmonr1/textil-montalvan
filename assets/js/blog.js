@@ -116,3 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+          setTimeout(() => {
+              element.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+      }
+  }
+});
