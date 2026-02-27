@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const splitForm = document.querySelector(".split-form");
 
   setTimeout(() => {
-    splitContent.classList.add("show");
-    splitForm.classList.add("show");
-  }, 800); 
+    if (splitContent) splitContent.classList.add("show");
+    if (splitForm) splitForm.classList.add("show");
+  }, 500); 
 
   const animatedElements = document.querySelectorAll(
     '.card-wrapper, .map-info-card, .map-card'
