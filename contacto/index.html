@@ -18,6 +18,8 @@
 </head>
 
 
+
+
 <body class="contacto">
 
   <header>
@@ -70,7 +72,6 @@
     </nav>
   </header>
 
-  <!-- SEARCH BAR -->
   <div class="search-bar">
     <div class="search-container">
       <i class="fa-solid fa-magnifying-glass"></i>
@@ -80,8 +81,6 @@
   </div>
 
   <div class="overlay-search"></div>
-
-
 
   <div class="sidebar">
 
@@ -173,24 +172,27 @@
           <img src="../assets/imgs/logo-header-removebg-preview.png" alt="Textiles Montalván">
         </div>
 
-        <form class="form-dark">
+        <form id="contactForm" class="form-dark">
 
-          <input type="text" placeholder="Nombre completo" required>
-          <input type="email" placeholder="Correo electrónico" required>
-          <textarea rows="4" placeholder="Mensaje" required></textarea>
+          <input type="text" name="from_name" placeholder="Nombre completo" required>
 
-          <div class="custom-submit">
+          <input type="email" name="from_email" placeholder="Correo electrónico" required>
+
+          <textarea name="message" rows="4" placeholder="Mensaje" required></textarea>
+
+          <button type="submit" class="custom-submit">
             Enviar mensaje
-          </div>
+          </button>
 
-          <script>
-            document.querySelector(".custom-submit").addEventListener("click", function () {
-              this.closest("form").submit();
-            });
-          </script>
         </form>
 
       </div>
+
+
+
+
+
+    </div>
 
     </div>
 
@@ -360,13 +362,78 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <script src="../assets/js/contacto.js" defer></script>
 
 </body>
 
 <footer>
   <p>© 2026 Textilería Montalva</p>
 </footer>
+
+<div id="customModal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-icon success">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h3 id="modalTitle">Mensaje enviado</h3>
+    <p id="modalMessage">Tu mensaje fue enviado correctamente.</p>
+    <button id="modalClose">Cerrar</button>
+  </div>
+</div>
+
+<script src="../assets/js/contacto.js" defer></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("mT8l1MEB7dRRUIYLM");
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  
+    const form = document.getElementById("contactForm");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const formData = this;
+  
+      emailjs.sendForm(
+        "service_ulrp7rf",
+        "template_jjld5cq",
+        formData
+      ).then(function () {
+  
+        emailjs.sendForm(
+          "service_ulrp7rf",
+          "template_u3gqfdk",
+          formData
+        );
+  
+        openModal(
+          "success",
+          "Mensaje enviado",
+          "Tu mensaje fue enviado correctamente."
+        );
+  
+        form.reset();
+  
+      }).catch(function (error) {
+  
+        openModal(
+          "error",
+          "Error al enviar",
+          "Ocurrió un problema. Inténtalo nuevamente."
+        );
+  
+        console.log(error);
+  
+      });
+  
+    });
+  
+  });
+  </script>
+
 
 </body>
 
