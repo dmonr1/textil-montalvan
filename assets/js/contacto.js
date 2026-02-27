@@ -3,16 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('header');
   if (header) header.classList.add('show');
 
-  /* SPLIT ANIMATION */
   const splitContent = document.querySelector(".split-content");
   const splitForm = document.querySelector(".split-form");
 
   setTimeout(() => {
     splitContent.classList.add("show");
     splitForm.classList.add("show");
-  }, 800); // después del header
-
-  /* SCROLL ANIMATIONS (CARDS + MAP) */
+  }, 800); 
 
   const animatedElements = document.querySelectorAll(
     '.card-wrapper, .map-info-card, .map-card'
@@ -24,14 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-          obs.unobserve(entry.target); // se anima solo una vez
+          obs.unobserve(entry.target); 
         }
       });
     }, { threshold: 0.2 });
 
     animatedElements.forEach((el, index) => {
 
-      el.style.transitionDelay = `${index * 0.15}s`; // efecto uno por uno
+      el.style.transitionDelay = `${index * 0.15}s`; 
       observer.observe(el);
 
     });

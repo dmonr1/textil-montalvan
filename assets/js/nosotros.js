@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
     const menu = document.querySelector(".menu");
     const menuItems = document.querySelectorAll(".menu > li > a");
     const menuLine = document.querySelector(".menu-line");
@@ -163,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1900);
 
 });
-
 
 window.addEventListener("load", () => {
     if (window.location.hash) {

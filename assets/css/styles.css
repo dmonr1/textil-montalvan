@@ -688,13 +688,11 @@ header:hover .logo img {
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ICONO */
 .btn-expand .circle i {
     color: #000000;
     font-size: 14px;
 }
 
-/* HOVER */
 .btn-expand:hover {
     background: #000;
     color: #fff;
@@ -754,13 +752,11 @@ header:hover .logo img {
     will-change: transform, opacity;
 }
 
-/* ACTIVAR ANIMACION */
 .beneficio.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ICONO */
 .beneficio i {
     font-size: 50px;
     margin-bottom: 20px;
@@ -2234,7 +2230,6 @@ footer strong {
     transform: translateY(0);
 }
 
-
 .map-info-card,
 .map-card {
     opacity: 0;
@@ -2249,6 +2244,7 @@ footer strong {
     opacity: 1;
     transform: scale(1);
 }
+
 @media (max-width: 1100px) {
 
 
