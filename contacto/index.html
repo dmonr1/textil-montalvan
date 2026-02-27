@@ -8,7 +8,6 @@
 
   <link rel="icon" type="image/x-icon" href="../assets/imgs/catalogo/withlove.png">
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="../assets/css/nosotros.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -157,12 +156,17 @@
 
         <p>
           Estamos listos para asesorarte y ayudarte a encontrar la tela perfecta.
-          Escríbenos o visítanos en nuestro local en La Victoria.
+          Escríbenos o visítanos en nuestro local.
         </p>
 
-        <a href="https://wa.me/51940203534" class="btn-contact-modern">
-          Escribir por WhatsApp
-        </a>
+        <div class="contacto-cta">
+          <a href="https://wa.me/51940203534" target="_blank" class="btn-expand-2">
+            <span class="text">Escribenos</span>
+            <span class="circle">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
 
       </div>
 
@@ -179,8 +183,15 @@
           <input type="email" placeholder="Correo electrónico" required>
           <textarea rows="4" placeholder="Mensaje" required></textarea>
 
-          <button type="submit">Enviar mensaje</button>
+          <div class="custom-submit">
+            Enviar mensaje
+          </div>
 
+          <script>
+            document.querySelector(".custom-submit").addEventListener("click", function () {
+              this.closest("form").submit();
+            });
+          </script>
         </form>
 
       </div>
@@ -193,22 +204,67 @@
 
     <div class="dark-container">
 
-      <div class="contact-card">
-        <i class="fa-solid fa-location-dot"></i>
-        <h4>Ubicación</h4>
-        <p>La Victoria, Lima - Perú</p>
+      <!-- CARD 1 -->
+      <div class="card-wrapper">
+        <div class="card-bg"></div>
+
+        <div class="contact-card">
+          <div class="card-header">
+            <div class="icon-circle">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h4>Ubicación</h4>
+          </div>
+
+          <div class="title-underline"></div>
+
+          <p>La Victoria, Lima - Perú</p>
+          <span class="contact-extra">Lunes a Sábado 9am - 7pm</span>
+
+          <a href="#" class="card-btn">Ver mapa</a>
+        </div>
       </div>
 
-      <div class="contact-card">
-        <i class="fa-solid fa-phone"></i>
-        <h4>Teléfono</h4>
-        <p>940 203 534</p>
+      <!-- CARD 2 -->
+      <div class="card-wrapper">
+        <div class="card-bg"></div>
+
+        <div class="contact-card">
+          <div class="card-header">
+            <div class="icon-circle">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h4>Teléfono</h4>
+          </div>
+
+          <div class="title-underline"></div>
+
+          <p>940 203 534</p>
+          <span class="contact-extra">Atención inmediata</span>
+
+          <a href="tel:940203534" class="card-btn">Llamar</a>
+        </div>
       </div>
 
-      <div class="contact-card">
-        <i class="fa-regular fa-envelope"></i>
-        <h4>Email</h4>
-        <p>info@textilmontalvan.com</p>
+      <!-- CARD 3 -->
+      <div class="card-wrapper">
+        <div class="card-bg"></div>
+
+        <div class="contact-card">
+          <div class="card-header">
+            <div class="icon-circle">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <h4>Email</h4>
+          </div>
+
+          <div class="title-underline"></div>
+
+          <p>info@textilmontalvan.com</p>
+          <span class="contact-extra">Respondemos en 24h</span>
+
+          <a href="mailto:info@textilmontalvan.com" class="card-btn">Enviar correo</a>
+        </div>
       </div>
 
     </div>
@@ -217,10 +273,42 @@
 
   <section class="contact-map-section">
 
-    <div class="map-wrapper">
+    <div class="map-container">
 
-      <iframe src="https://www.google.com/maps?q=La+Victoria+Lima+Peru&output=embed" allowfullscreen="" loading="lazy">
-      </iframe>
+      <!-- CARD IZQUIERDA -->
+      <div class="map-info-card">
+        <h2>Visítanos en tienda</h2>
+        <p>Estamos ubicados en La Victoria, Lima - Perú.</p>
+
+        <div class="map-details">
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            La Victoria, Lima
+          </span>
+
+          <span>
+            <i class="fa-regular fa-clock"></i>
+            Lunes a Sábado 9am - 7pm
+          </span>
+        </div>
+
+        <div class="contacto-cta">
+          <a href="https://www.google.com/maps/place/Jr.+Antonio+Bazo+950,+La+Victoria+15018/@-12.067863,-77.014194,16z/data=!4m6!3m5!1s0x9105c89e9d991c37:0x74c2ec403d2b60bc!8m2!3d-12.0678633!4d-77.0141943!16s%2Fg%2F11lmpyq0bc?hl=es&entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" class="btn-expand-2">
+            <span class="text">Ver en Google Maps</span>
+            <span class="circle">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD DERECHA -->
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=La+Victoria+Lima+Peru&output=embed" allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
 
     </div>
 
