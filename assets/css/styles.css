@@ -1880,7 +1880,7 @@ footer strong {
 }
 
 .split-form {
-    background: #2b2b2b;
+    background: #000;
     padding: 30px 112px 30px 104px;
     border-top-left-radius: 50px;
     display: flex;
@@ -1978,7 +1978,7 @@ footer strong {
 
 .contact-dark {
     padding: 110px 8%;
-    background: #2b2b2b;
+    background: #000;
 }
 
 .dark-container {
@@ -2179,6 +2179,76 @@ footer strong {
     border-radius: 15px;
 }
 
+.split-content,
+.split-form {
+    opacity: 0;
+}
+
+.split-content {
+    transform: translateY(40px);
+}
+
+.split-form {
+    transform: translateX(80px);
+}
+
+.split-content.show {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.split-form.show {
+    animation: slideInRight 0.9s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.contacto{
+    overflow-x: hidden;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card-wrapper,
+.map-info-card,
+.map-card {
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: all 0.8s cubic-bezier(.2,.65,.3,1);
+}
+
+.card-wrapper.show,
+.map-info-card.show,
+.map-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.map-info-card,
+.map-card {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+.map-info-card.show,
+.map-card.show {
+    opacity: 1;
+    transform: scale(1);
+}
 @media (max-width: 1100px) {
 
 
