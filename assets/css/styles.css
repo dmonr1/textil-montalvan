@@ -3103,48 +3103,14 @@ footer strong {
     transform: translateY(0);
 }
 
-/* =========================
-   RESPONSIVE RELATED SLIDER
-========================= */
-
 /* Desktop grande */
 .related-card {
     min-width: calc((100% - 50px) / 3);
     flex-shrink: 0;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-    .related-card {
-        min-width: calc((100% - 25px) / 2);
-    }
-}
 
-/* Mobile */
-@media (max-width: 640px) {
 
-    .related-slider-wrapper {
-        position: relative;
-    }
-
-    .related-card {
-        min-width: 100%;
-    }
-
-    .slider-btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .prev { left: -10px; }
-    .next { right: -10px; }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
- 
-}
 
 @media (max-width: 1100px) {
 
@@ -3204,6 +3170,7 @@ footer strong {
         padding: 25px 20px 0px 15px;
     }
 
+    
 }
 
 @media (max-width: 900px) {
@@ -3429,5 +3396,66 @@ footer strong {
     .post-container {
         max-width: 410px;
         margin: auto;
+    }
+
+    .related-slider-wrapper {
+        position: relative;
+    }
+
+    .related-card {
+        min-width: 100%;
+    }
+
+    .slider-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .prev { left: -10px; }
+    .next { right: -10px; }
+
+        .community-section {
+        padding: 70px 20px;
+    }
+
+    .community-title {
+        font-size: 42px;
+        letter-spacing: 1px;
+    }
+
+    .community-description {
+        font-size: 1rem;
+    }
+
+    .community-review-card {
+        min-width: 85%;
+    }
+
+    .community-carousel-wrapper {
+        padding: 0 30px;
+    }
+
+    /* Centrar mejor el track */
+    .community-carousel-track {
+        gap: 20px;
+    }
+
+    /* Flechas más pegadas */
+    .community-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .community-arrow-left {
+        left: 5px;
+    }
+
+    .community-arrow-right {
+        right: 5px;
+    }
+
+    /* Quitar elevación exagerada */
+    .community-review-card.is-active {
+        transform: translateY(-6px);
     }
 }
