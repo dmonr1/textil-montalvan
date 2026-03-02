@@ -98,42 +98,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnNext = document.querySelector(".community-arrow-right");
   const btnPrev = document.querySelector(".community-arrow-left");
   const dotsContainer = document.querySelector(".community-dots");
-  
+
   let position = 0;
-  
+
   function getCardsPerView() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 992) return 2;
-      return 3;
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
   }
-  
+
   function getMaxPosition() {
-      return cards.length - getCardsPerView();
+    return cards.length - getCardsPerView();
   }
-  
+
   /* Crear dots */
   function createDots() {
-      dotsContainer.innerHTML = "";
-      for (let i = 0; i <= getMaxPosition(); i++) {
-          const dot = document.createElement("div");
-          dot.classList.add("community-dot");
-          if (i === 0) dot.classList.add("active");
-  
-          dot.addEventListener("click", () => {
-              position = i;
-              updateCarousel();
-          });
-  
-          dotsContainer.appendChild(dot);
-      }
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i <= getMaxPosition(); i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("community-dot");
+      if (i === 0) dot.classList.add("active");
+
+      dot.addEventListener("click", () => {
+        position = i;
+        updateCarousel();
+      });
+
+      dotsContainer.appendChild(dot);
+    }
   }
-  
+
   function updateDots() {
-      const dots = document.querySelectorAll(".community-dot");
-      dots.forEach(dot => dot.classList.remove("active"));
-      if (dots[position]) dots[position].classList.add("active");
+    const dots = document.querySelectorAll(".community-dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[position]) dots[position].classList.add("active");
   }
-  
+
   function updateCarousel() {
     const cardWidth = cards[0].offsetWidth + 25;
     track.style.transform = `translateX(-${position * cardWidth}px)`;
@@ -145,58 +145,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Si se ven 3 → activar la del medio
     if (cardsPerView === 3) {
-        const activeIndex = position + 1;
-        if (cards[activeIndex]) {
-            cards[activeIndex].classList.add("is-active");
-        }
+      const activeIndex = position + 1;
+      if (cards[activeIndex]) {
+        cards[activeIndex].classList.add("is-active");
+      }
     }
+
+
 
     // Si se ven 2 → activar la primera visible
     else if (cardsPerView === 2) {
-        if (cards[position]) {
-            cards[position].classList.add("is-active");
-        }
+      if (cards[position]) {
+        cards[position].classList.add("is-active");
+      }
     }
 
     // Si se ve 1 → activar la visible
     else {
-        if (cards[position]) {
-            cards[position].classList.add("is-active");
-        }
+      if (cards[position]) {
+        cards[position].classList.add("is-active");
+      }
     }
 
     updateDots();
-}
-  
+  }
+
+  // =======================
+  // DRAG / SWIPE
+  // =======================
+
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX;
+  });
+
+  window.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const diff = e.pageX - startX;
+
+    if (diff > 60) {
+      prevSlide();
+    } else if (diff < -60) {
+      nextSlide();
+    }
+  });
+
+  track.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].clientX - startX;
+
+    if (diff > 60) {
+      prevSlide();
+    } else if (diff < -60) {
+      nextSlide();
+    }
+  });
+
   function nextSlide() {
-      if (position < getMaxPosition()) {
-          position++;
-      } else {
-          position = 0;
-      }
-      updateCarousel();
+    if (position < getMaxPosition()) {
+      position++;
+    } else {
+      position = 0;
+    }
+    updateCarousel();
   }
-  
+
   function prevSlide() {
-      if (position > 0) {
-          position--;
-      } else {
-          position = getMaxPosition();
-      }
-      updateCarousel();
+    if (position > 0) {
+      position--;
+    } else {
+      position = getMaxPosition();
+    }
+    updateCarousel();
   }
-  
+
   btnNext.addEventListener("click", nextSlide);
   btnPrev.addEventListener("click", prevSlide);
-  
+
   setInterval(nextSlide, 5000);
-  
+
   window.addEventListener("resize", () => {
-      position = 0;
-      createDots();
-      updateCarousel();
+    position = 0;
+    createDots();
+    updateCarousel();
   });
-  
+
   createDots();
   updateCarousel();
 

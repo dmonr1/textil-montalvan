@@ -2507,6 +2507,15 @@ footer strong {
     opacity: 0.85;
 }
 
+.community-carousel-track {
+    user-select: none;
+    cursor: grab;
+}
+
+.community-carousel-track:active {
+    cursor: grabbing;
+}
+
 @media (max-width: 768px) {
     .community-arrow-left {
         left: 0;
