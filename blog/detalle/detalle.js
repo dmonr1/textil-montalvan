@@ -418,12 +418,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("share-ln").href =
             `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
 
-        // ======================
-        // RELACIONADOS
-        // ======================
-
         const relatedContainer = document.getElementById("related-posts");
-        relatedContainer.innerHTML = ""; // limpia antes de insertar
+        relatedContainer.innerHTML = ""; 
 
         const related = posts
             .filter(p => p.id !== post.id)
@@ -461,20 +457,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const slider = document.querySelector(".related-slider");
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
-    
+
     function getScrollAmount() {
         const card = document.querySelector(".related-card");
-        const gap = 25; // mismo gap que en CSS
+        const gap = 25; 
         return card.offsetWidth + gap;
     }
-    
+
     nextBtn.addEventListener("click", () => {
         slider.scrollBy({
             left: getScrollAmount(),
             behavior: "smooth"
         });
     });
-    
+
     prevBtn.addEventListener("click", () => {
         slider.scrollBy({
             left: -getScrollAmount(),
@@ -482,51 +478,59 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // =======================
-// DRAG RELATED SLIDER
-// =======================
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-let isDown = false;
-let startX;
-let scrollLeft;
+    slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("dragging");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
 
-slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    slider.classList.add("dragging");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
+    slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("dragging");
+    });
 
-slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-});
+    slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("dragging");
+    });
 
-slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-});
+    slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
 
-slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.2; 
-    slider.scrollLeft = scrollLeft - walk;
-});
+    slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].pageX;
+        scrollLeft = slider.scrollLeft;
+    });
 
-// TOUCH MOBILE
+    slider.addEventListener("touchmove", (e) => {
+        const x = e.touches[0].pageX;
+        const walk = (x - startX) * 1.2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
 
-slider.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].pageX;
-    scrollLeft = slider.scrollLeft;
-});
+    const backBtnBlog = document.getElementById("backToBlog");
 
-slider.addEventListener("touchmove", (e) => {
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 1.2;
-    slider.scrollLeft = scrollLeft - walk;
-});
+    if (backBtnBlog) {
+        backBtnBlog.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            if (document.referrer.includes("/blog")) {
+                window.location.href = document.referrer;
+            } else {
+                window.location.href = "/blog/";
+            }
+        });
+    }
 
 });
 
@@ -541,3 +545,19 @@ window.addEventListener("load", () => {
     }
 });
 
+const animatedItems = document.querySelectorAll(
+    ".scroll-fade, .hero-animate"
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+animatedItems.forEach(el => observer.observe(el));

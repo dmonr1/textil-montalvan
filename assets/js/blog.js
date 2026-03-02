@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('header');
   if (header) header.classList.add('show');
 
-
   const menu = document.querySelector(".menu");
   const menuItems = document.querySelectorAll(".menu > li > a");
   const menuLine = document.querySelector(".menu-line");
@@ -111,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return cards.length - getCardsPerView();
   }
 
-  /* Crear dots */
   function createDots() {
     dotsContainer.innerHTML = "";
     for (let i = 0; i <= getMaxPosition(); i++) {
@@ -138,12 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardWidth = cards[0].offsetWidth + 25;
     track.style.transform = `translateX(-${position * cardWidth}px)`;
 
-    // Quitar clase activa a todas
     cards.forEach(card => card.classList.remove("is-active"));
 
     const cardsPerView = getCardsPerView();
 
-    // Si se ven 3 → activar la del medio
     if (cardsPerView === 3) {
       const activeIndex = position + 1;
       if (cards[activeIndex]) {
@@ -151,16 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-
-
-    // Si se ven 2 → activar la primera visible
     else if (cardsPerView === 2) {
       if (cards[position]) {
         cards[position].classList.add("is-active");
       }
     }
 
-    // Si se ve 1 → activar la visible
     else {
       if (cards[position]) {
         cards[position].classList.add("is-active");
@@ -169,10 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateDots();
   }
-
-  // =======================
-  // DRAG / SWIPE
-  // =======================
 
   let startX = 0;
   let isDragging = false;
@@ -241,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
   createDots();
   updateCarousel();
 
-
 });
 
 window.addEventListener("load", () => {
@@ -255,3 +242,18 @@ window.addEventListener("load", () => {
   }
 });
 
+const scrollElements = document.querySelectorAll(
+  ".scroll-animate, .scroll-animate-left, .scroll-animate-right"
+);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+scrollElements.forEach(el => observer.observe(el));

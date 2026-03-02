@@ -2331,7 +2331,6 @@ footer strong {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
-
 }
 
 .community-carousel-track {
@@ -2347,7 +2346,6 @@ footer strong {
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     margin: 18px 0px 18px 0px;
-
 }
 
 .community-review-top {
@@ -2380,15 +2378,12 @@ footer strong {
     line-height: 1.6;
 }
 
-
-/* CONTENEDOR GENERAL */
 .community-carousel-container {
     position: relative;
     max-width: 1200px;
     margin: auto;
 }
 
-/* FLECHAS */
 .community-arrow {
     position: absolute;
     top: 50%;
@@ -2421,14 +2416,9 @@ footer strong {
     right: -20px;
 }
 
-/* Ajuste para que no se corten */
 .community-carousel-wrapper {
     overflow: hidden;
 }
-
-/* ============================= */
-/* DOTS PAGINACIÓN */
-/* ============================= */
 
 .community-dots {
     margin-top: 40px;
@@ -2447,27 +2437,20 @@ footer strong {
     cursor: pointer;
 }
 
-/* Punto activo → se vuelve óvalo */
 .community-dot.active {
     width: 28px;
     background: #111;
 }
 
-/* ============================= */
-/* CARD ACTIVA (CENTRAL) */
-/* ============================= */
-
 .community-review-card {
     transition: all 0.4s ease;
 }
 
-/* La card activa se eleva */
 .community-review-card.is-active {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Opcional: las laterales ligeramente más suaves */
 .community-review-card:not(.is-active) {
     opacity: 0.85;
 }
@@ -2493,34 +2476,25 @@ footer strong {
     font-size: 1.2rem;
 }
 
-/* Colores distintos */
 .bg-1 {
     background: #4285F4;
 }
 
-/* Azul */
 .bg-2 {
     background: #EA4335;
 }
 
-/* Rojo */
 .bg-3 {
     background: #FBBC05;
 }
 
-/* Amarillo */
 .bg-4 {
     background: #34A853;
 }
 
-/* Verde */
 .bg-5 {
     background: #8E24AA;
 }
-
-/* Morado moderno */
-
-/* ================= BLOG SECTION ================= */
 
 .blog-section {
     padding: 45px 10% 100px 10%;
@@ -2621,13 +2595,9 @@ footer strong {
     color: #777;
 }
 
-/* BADGE */
-
 .blog-img {
     position: relative;
 }
-
-/* BADGE ESTILO OUTLINE */
 
 .blog-badge-outline {
     display: inline-block;
@@ -2640,7 +2610,6 @@ footer strong {
     margin-bottom: 5px;
 }
 
-/* COLORES POR CATEGORÍA */
 
 .badge-tendencias {
     color: #4285F4;
@@ -2661,8 +2630,6 @@ footer strong {
     color: #EA4335;
     border-color: #EA4335;
 }
-
-/* BOTÓN LEER MÁS */
 
 .blog-link {
     display: inline-flex;
@@ -2695,11 +2662,6 @@ footer strong {
     transform: translateX(3px);
 }
 
-/* ============================= */
-/* BLOG DETALLE */
-/* ============================= */
-
-/* HERO */
 .post-hero {
     height: 55vh;
     background-size: cover;
@@ -2752,10 +2714,6 @@ footer strong {
     opacity: 0.9;
 }
 
-/* =========================
-   BOTÓN VOLVER BLOG
-========================= */
-
 .back-to-blog {
     margin: 60px 0 10px;
 }
@@ -2784,7 +2742,6 @@ footer strong {
     transform: translateX(-4px);
 }
 
-/* CONTENIDO */
 .post-content-section {
     background: #fff;
     padding: 40px 20px;
@@ -2807,10 +2764,6 @@ footer strong {
     margin-top: 30px;
     margin-bottom: 20px;
 }
-
-/* =========================
-   POST CONTENT ESTILO EDITORIAL
-========================= */
 
 .post-content h1,
 .post-content h2 {
@@ -2846,10 +2799,6 @@ footer strong {
 .post-content li {
     margin-bottom: 10px;
 }
-
-/* =========================
-   ARTICLE HEADER EDITORIAL
-========================= */
 
 .article-header {
     margin-bottom: 30px;
@@ -2894,10 +2843,6 @@ footer strong {
     font-size: 1.1rem;
 }
 
-/* =========================
-   COLORES SELECCIONABLES
-========================= */
-
 .post-colors {
     margin: 40px 0;
 }
@@ -2936,7 +2881,6 @@ footer strong {
     font-weight: 600;
 }
 
-/* SHARE */
 .post-share {
     margin-top: 50px;
     display: flex;
@@ -2966,10 +2910,6 @@ footer strong {
     transform: translateY(-4px);
     background: #000;
 }
-
-/* =========================
-   RELATED SLIDER
-========================= */
 
 .related-section {
     margin: 25px 0 60px;
@@ -3051,7 +2991,6 @@ footer strong {
     right: -20px;
 }
 
-/* ANIMACIÓN SUAVE DE CARGA */
 .post-content-section,
 .related-section {
     opacity: 0;
@@ -3065,7 +3004,6 @@ footer strong {
     transform: translateY(0);
 }
 
-/* Desktop grande */
 .related-card {
     min-width: calc((100% - 50px) / 3);
     flex-shrink: 0;
@@ -3085,8 +3023,70 @@ footer strong {
     cursor: grabbing;
 }
 
-@media (max-width: 1100px) {
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
 
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.5s;
+}
+
+.delay-2 {
+    transition-delay: 0.7s;
+}
+
+.delay-3 {
+    transition-delay: 0.9s;
+}
+
+.scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.8s ease;
+}
+
+.scroll-animate-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.8s ease;
+}
+
+.scroll-animate-left.active,
+.scroll-animate-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s ease;
+}
+
+.scroll-fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-animate {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 1.2s ease;
+}
+
+.hero-animate.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 1100px) {
 
     .contact-split {
         height: auto;
@@ -3231,6 +3231,7 @@ footer strong {
         max-width: 650px;
         margin: auto;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -3395,8 +3396,6 @@ footer strong {
         font-size: 1rem;
     }
 
-  
-
     .related-slider-wrapper {
         position: relative;
     }
@@ -3445,12 +3444,10 @@ footer strong {
         padding: 0 30px;
     }
 
-    /* Centrar mejor el track */
     .community-carousel-track {
         gap: 20px;
     }
 
-    /* Flechas más pegadas */
     .community-arrow {
         width: 40px;
         height: 40px;
@@ -3464,7 +3461,6 @@ footer strong {
         right: 5px;
     }
 
-    /* Quitar elevación exagerada */
     .community-review-card.is-active {
         transform: translateY(-6px);
     }
@@ -3502,5 +3498,5 @@ footer strong {
         max-width: 308px;
         margin: auto;
     }
-    
+
 }
