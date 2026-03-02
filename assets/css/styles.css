@@ -3118,12 +3118,19 @@ footer strong {
     flex-shrink: 0;
 }
 
-.detalle-blog{
+.detalle-blog {
     overflow-x: hidden;
 }
 
 
+.related-slider {
+    cursor: grab;
+    user-select: none;
+}
 
+.related-slider.dragging {
+    cursor: grabbing;
+}
 
 @media (max-width: 1100px) {
 
@@ -3183,7 +3190,7 @@ footer strong {
         padding: 25px 20px 0px 15px;
     }
 
-    
+
 }
 
 @media (max-width: 900px) {
@@ -3416,7 +3423,13 @@ footer strong {
     }
 
     .related-card {
-        min-width: 100%;
+        width: 285px;
+        margin-left: 10px;
+    }
+
+    .related-slider {
+        gap: 20px;
+
     }
 
     .slider-btn {
@@ -3424,10 +3437,15 @@ footer strong {
         height: 36px;
     }
 
-    .prev { left: -10px; }
-    .next { right: -10px; }
+    .prev {
+        left: -10px;
+    }
 
-        .community-section {
+    .next {
+        right: -10px;
+    }
+
+    .community-section {
         padding: 70px 20px;
     }
 
@@ -3441,7 +3459,7 @@ footer strong {
     }
 
     .community-review-card {
-        min-width: 85%;
+        min-width: 100%;
     }
 
     .community-carousel-wrapper {
@@ -3476,5 +3494,8 @@ footer strong {
         margin: 60px 15px 10px;
     }
 
-   
+    .related-card img {
+        height: 120px;
+    }
+
 }
