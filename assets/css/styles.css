@@ -1135,29 +1135,7 @@ footer strong {
 }
 
 
-@media (max-width: 900px) {
 
-    .producto-destacado {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .info-producto {
-        position: relative;
-        top: auto;
-    }
-
-    .galeria-grid {
-        height: auto;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .img-box {
-        aspect-ratio: 3 / 4;
-    }
-
-}
 
 @keyframes fadeUp {
     to {
@@ -2402,19 +2380,6 @@ footer strong {
     line-height: 1.6;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 992px) {
-    .community-review-card {
-        min-width: calc(50% - 12px);
-    }
-}
-
-@media (max-width: 600px) {
-    .community-review-card {
-        min-width: 100%;
-    }
-}
 
 /* CONTENEDOR GENERAL */
 .community-carousel-container {
@@ -2515,18 +2480,6 @@ footer strong {
 .community-carousel-track:active {
     cursor: grabbing;
 }
-
-@media (max-width: 768px) {
-    .community-arrow-left {
-        left: 0;
-    }
-
-    .community-arrow-right {
-        right: 0;
-    }
-}
-
-/* AVATAR CON INICIAL */
 
 .community-avatar-letter {
     width: 55px;
@@ -3249,6 +3202,35 @@ footer strong {
     .map-card iframe {
         min-height: 350px;
     }
+
+    .producto-destacado {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .info-producto {
+        position: relative;
+        top: auto;
+    }
+
+    .galeria-grid {
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .img-box {
+        aspect-ratio: 3 / 4;
+    }
+
+    .community-review-card {
+        min-width: calc(50% - 12px);
+    }
+
+    .post-container {
+        max-width: 650px;
+        margin: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3413,10 +3395,7 @@ footer strong {
         font-size: 1rem;
     }
 
-    .post-container {
-        max-width: 308px;
-        margin: auto;
-    }
+  
 
     .related-slider-wrapper {
         position: relative;
@@ -3498,4 +3477,30 @@ footer strong {
         height: 120px;
     }
 
+    .community-review-card {
+        min-width: 100%;
+    }
+
+    .community-arrow-left {
+        left: 0;
+    }
+
+    .community-arrow-right {
+        right: 0;
+    }
+
+    .post-container {
+        max-width: 500px;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 448px) {
+
+    .post-container {
+        max-width: 308px;
+        margin: auto;
+    }
+    
 }
