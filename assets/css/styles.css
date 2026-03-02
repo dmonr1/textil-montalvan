@@ -2842,7 +2842,7 @@ footer strong {
 
 .post-content h2 {
     font-size: 1.6rem;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -3010,7 +3010,7 @@ footer strong {
 ========================= */
 
 .related-section {
-    margin: 80px 0;
+    margin: 25px 0 60px;
 }
 
 .related-slider-wrapper {
@@ -3107,6 +3107,10 @@ footer strong {
 .related-card {
     min-width: calc((100% - 50px) / 3);
     flex-shrink: 0;
+}
+
+.detalle-blog{
+    overflow-x: hidden;
 }
 
 
@@ -3394,7 +3398,7 @@ footer strong {
     }
 
     .post-container {
-        max-width: 410px;
+        max-width: 300px;
         margin: auto;
     }
 
@@ -3458,4 +3462,10 @@ footer strong {
     .community-review-card.is-active {
         transform: translateY(-6px);
     }
+
+    .back-to-blog {
+        margin: 60px 15px 10px;
+    }
+
+   
 }
