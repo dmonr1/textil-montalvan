@@ -2299,6 +2299,8 @@ footer strong {
 .svg-03 {
     background-color: #f8f8f8;
     margin-bottom: -8px;
+    height: 150px;
+    width: 100%;
 }
 
 /* ===============================
@@ -2308,6 +2310,11 @@ footer strong {
 .community-section {
     padding: 100px 20px;
     background: #ffffff;
+    height: 68vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .community-header {
@@ -2381,7 +2388,6 @@ footer strong {
 .community-carousel-container {
     position: relative;
     max-width: 1200px;
-    margin: auto;
 }
 
 .community-arrow {
