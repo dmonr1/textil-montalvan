@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Detalle| Textilería Montalván</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/imgs/catalogo/withlove.png">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <header>
+        <nav class="container">
+
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="https://github.com/dmonr1/textil-montalvan/blob/main/assets/imgs/logo-header.png?raw=true"
+                        alt="Textilería Montalván">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="../../catalogo/#">Catalogo</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Telas de punto</a></li>
+                        <li><a href="#">Telas de alta rotación</a></li>
+                        <li><a href="#">Telas & fluidas</a></li>
+                        <li><a href="#">Telas estructuradas</a></li>
+                        <li><a href="#">Telas de abrigo</a></li>
+                        <li><a href="#">Telas de moda</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../../nosotros/#">Nosotros</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Historia</a></li>
+                        <li><a href="#">Misión</a></li>
+                        <li><a href="#">Visión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../contacto/#">Contacto</a></li>
+
+                <li><a href="../../blog/#">Blog</a></li>
+                <span class="menu-line"></span>
+            </ul>
+
+            <div class="header-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar productos...">
+            <i class="fa-solid fa-xmark close-search"></i>
+        </div>
+    </div>
+
+    <div class="overlay-search"></div>
+
+
+
+
+    <div class="sidebar">
+
+        <div class="sidebar-main active">
+            <div class="sidebar-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li class="has-submenu" data-target="submenu-catalogo">
+                    <span>Catalogo</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+
+                <li class="has-submenu" data-target="submenu-nosotros">
+                    <span>Nosotros</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+                <li><a href="../../contacto/#">Contacto</a></li>
+                <li><a href="../../blog/#">Blog</a></li>
+            </ul>
+        </div>
+
+        <!-- SUBMENU CATALOGO -->
+        <div class="sidebar-submenu" id="submenu-catalogo">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Telas de punto</a></li>
+                <li><a href="#">Telas alta rotación</a></li>
+                <li><a href="#">Telas fluidas</a></li>
+                <li><a href="#">Telas estructuradas</a></li>
+                <li><a href="#">Telas de abrigo</a></li>
+                <li><a href="#">Telas de moda</a></li>
+            </ul>
+        </div>
+
+        <!-- SUBMENU NOSOTROS -->
+        <div class="sidebar-submenu" id="submenu-nosotros">
+            <div class="submenu-header">
+                <span class="back-btn">
+                    <i class="fa-solid fa-caret-left"></i>
+                </span>
+            </div>
+
+            <ul>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Misión</a></li>
+                <li><a href="#">Visión</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <section class="post-hero" id="post-hero">
+        <div class="post-hero-overlay">
+            <span id="post-category"></span>
+            <h1 id="post-title"></h1>
+            <div class="post-meta">
+                <span id="post-date"></span>
+                <span id="post-read"></span>
+            </div>
+        </div>
+
+
+    </section>
+
+    <div class="back-to-blog">
+        <div class="post-container">
+            <a href="javascript:history.back()" class="back-btn-blog">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver al Blog
+            </a>
+        </div>
+    </div>
+
+    <section class="post-content-section">
+        <div class="post-container">
+
+            <div id="post-content" class="post-content"></div>
+
+
+            <div class="post-share">
+                <span>Compartir:</span>
+                <a id="share-fb" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a id="share-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a id="share-ln" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="related-section">
+        <div class="post-container">
+            <h3 class="related-title">Temas relacionados</h3>
+
+            <div class="related-slider-wrapper">
+
+                <button class="slider-btn prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="related-slider" id="related-posts"></div>
+
+                <button class="slider-btn next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+
+            <div>
+                <img src="https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/logo_pie.jpg"
+                    alt="Logo">
+            </div>
+
+            <div>
+                <ul>
+                    <li>Estampación</li>
+                    <li>Políticas de privacidad</li>
+                    <li>Términos y condiciones</li>
+                    <li>Políticas de Cookies</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><strong>LÍNEAS:</strong></li>
+                    <li>Telas de punto</li>
+                    <li>Telas de alta rotación</li>
+                    <li>Telas & fluidas</li>
+                    <li>Telas estructuradas</li>
+                    <li>Telas de abrigo</li>
+                    <li>Telas de moda</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li><strong>Contacto</strong></li>
+                    <li><i class="fa-solid fa-phone"></i> 940203534 - 940203534</li>
+                    <li><i class="fa-regular fa-envelope"></i> info@textilmontalvan.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> La Victoria, Lima - Perú</li>
+                </ul>
+
+                <div class="social" style="margin-top:15px;">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copy">
+            © 2026 Textilería Montalván - Todos los derechos reservados
+        </div>
+    </footer>
+
+    <a href="https://wa.me/51940203534" class="btn-whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="detalle.js"></script>
+</body>
+
+</html>
