@@ -3262,6 +3262,7 @@ footer strong {
     cursor: pointer;
     position: relative;
     padding-bottom: 5px;
+    font-weight: 500;
 }
 
 .catalog-categories button.active::after {

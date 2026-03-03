@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Rib Reactivo",
       category: "punto",
       composition: "Algodón + Spandex · 220gr",
-      image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/rib-reactivo.png"
     },
 
     // ALTA ROTACIÓN
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Drill Industrial",
       category: "estructuradas",
       composition: "Algodón / Poliéster",
-      image: "https://images.unsplash.com/photo-1520974735194-5f53a4b8c89b?q=80&w=1974"
+      image: "https://github.com/dmonr1/textil-montalvan/blob/main/assets/imgs/catalogo/tela-dril-licrado.png?raw=true"
     },
 
     // ABRIGO
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Polar Antipilling",
       category: "abrigo",
       composition: "Poliéster · 280gr",
-      image: "https://images.unsplash.com/photo-1603251579431-8041406d9d11?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/Polar-antipilling.png"
     },
 
     // MODA
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Seda Satinada",
       category: "moda",
       composition: "Seda / Poliéster",
-      image: "github.com/dmonr1/textil-montalvan/blob/main/assets/imgs/catalogo/paño-italiano.jpg?raw=true"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/tela-satinada.png"
     },
     {
       name: "Tul Bordado",
