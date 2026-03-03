@@ -257,3 +257,63 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 scrollElements.forEach(el => observer.observe(el));
+
+
+// ==========================
+// GUÍAS DINÁMICAS
+// ==========================
+
+const guides = [
+  {
+    title: "Guía para elegir la tela ideal",
+    desc: "Aprende a seleccionar la tela perfecta según tipo de prenda y temporada.",
+    icon: "fa-book-open ic-1",
+    file: "../assets/guias/guia-telas.pdf"
+  },
+  {
+    title: "Manual de tendencias 2026",
+    desc: "Colores, texturas y patrones que dominarán el mercado textil.",
+    icon: "fa-chart-line ic-2",
+    file: "../assets/guias/tendencias-2026.pdf"
+  },
+  {
+    title: "Checklist para producción textil",
+    desc: "Optimiza tus procesos y evita errores comunes en confección.",
+    icon: "fa-clipboard-check ic-3",
+    file: "../assets/guias/checklist-produccion.pdf"
+  }
+];
+
+const guidesGrid = document.getElementById("guides-grid");
+
+if (guidesGrid) {
+  guides.forEach(guide => {
+    guidesGrid.innerHTML += `
+          <div class="guide-card scroll-reveal">
+              <div class="guide-icon">
+                  <i class="fa-solid ${guide.icon}"></i>
+              </div>
+              <h3>${guide.title}</h3>
+              <p>${guide.desc}</p>
+              <a href="${guide.file}" class="guide-btn" download>
+                  Descargar
+                  <i class="fa-solid fa-arrow-down"></i>
+              </a>
+          </div>
+      `;
+  });
+}
+
+/* Animación scroll */
+const revealElements = document.querySelectorAll(".scroll-reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+revealElements.forEach(el => revealObserver.observe(el));
