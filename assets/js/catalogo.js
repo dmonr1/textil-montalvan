@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Jersey Algodón 30/1",
       category: "punto",
       composition: "100% Algodón · 180gr",
-      image: "assets/imgs/catalogo/Jersey-301.jpg"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/Jersey-301.jpg"
     },
     {
       name: "Rib Reactivo",
