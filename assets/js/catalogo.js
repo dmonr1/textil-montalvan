@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Franela Nacional",
       category: "alta",
       composition: "Algodón 100% · 200gr",
-      image: "https://images.unsplash.com/photo-1617957718615-6b4f80f1a0f1?q=80&w=1974"
+      image: "https://images.unsplash.com/photo-  1617957718615-6b4f80f1a0f1?q=80&w=1974"
     },
     {
       name: "Piqué Clásico",
