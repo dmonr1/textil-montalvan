@@ -2502,7 +2502,7 @@ footer strong {
 }
 
 .blog-section {
-    padding: 45px 12% 50px;
+    padding: 45px 19% 50px;
     background: #f8f8f8;
 }
 
@@ -3102,12 +3102,8 @@ footer strong {
     transform: scale(1);
 }
 
-/* ========================= */
-/* GUÍAS DESCARGABLES */
-/* ========================= */
-
 .guides-section {
-    padding: 70px 20px 120px;
+    padding: 70px 10% 120px;
     background: #f8f9fb;
 }
 
@@ -3207,7 +3203,6 @@ footer strong {
     background: #333;
 }
 
-/* Scroll animation */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -3217,6 +3212,132 @@ footer strong {
 .scroll-reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* ===============================
+   CATALOGO
+=================================*/
+
+/* HERO */
+.catalog-hero {
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=2070') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* WRAPPER */
+.catalog-wrapper {
+    padding: 80px 60px;
+}
+
+/* CATEGORÍAS */
+.catalog-categories {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.catalog-categories button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.catalog-categories button.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    left: 0;
+    bottom: 0;
+}
+
+/* GRID */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.catalog-card {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.catalog-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.catalog-card:hover img {
+    transform: scale(1.05);
+}
+
+.catalog-info {
+    margin-top: 15px;
+}
+
+.catalog-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.catalog-info span {
+    font-size: 13px;
+    color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-wrapper {
+        padding: 50px 20px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .catalog-card img {
+        height: 400px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -3277,7 +3398,7 @@ footer strong {
     }
 
     .guides-section {
-        padding: 100px;
+        padding: 15%;
     }
 
     .guides-header h2 {
@@ -3650,7 +3771,7 @@ footer strong {
     }
 
     .guides-section {
-        padding: 80px;
+        padding: 15%;
     }
 
     .guides-header h2 {
@@ -3690,7 +3811,11 @@ footer strong {
 
 }
 
-@media (max-width: 448px) {
+@media (max-width: 500px) {
+
+    .blog-section {
+        padding: 45px 10% 50px;
+    }
 
     .post-container {
         max-width: 325px;
@@ -3703,7 +3828,7 @@ footer strong {
     }
 
     .guides-section {
-        padding: 60px 15px;
+        padding: 60px 10%;
     }
 
     .guides-header h2 {
