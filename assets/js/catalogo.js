@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Franela Nacional",
       category: "alta",
       composition: "Algodón 100% · 200gr",
-      image: "https://images.unsplash.com/photo-  1617957718615-6b4f80f1a0f1?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/franela-nacional.png"
     },
     {
       name: "Piqué Clásico",
       category: "alta",
       composition: "Poliéster / Algodón",
-      image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/tela-pique.png"
     },
 
     // FLUIDAS
@@ -148,13 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Gasa Sublimada",
       category: "fluidas",
       composition: "Poliéster · 120gr",
-      image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/gasa-sublimada.jpg"
     },
     {
       name: "Chalis Estampado",
       category: "fluidas",
       composition: "Rayón · 140gr",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/tela-chalis.png"
     },
 
     // ESTRUCTURADAS
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Denim Clásico 12oz",
       category: "estructuradas",
       composition: "Algodón 100%",
-      image: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/tela-jeans.png"
     },
     {
       name: "Drill Industrial",
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Paño Italiano",
       category: "abrigo",
       composition: "Lana Mezcla · 400gr",
-      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/pa%C3%B1o-italiano.jpg"
     },
     {
       name: "Polar Antipilling",
@@ -190,13 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Seda Satinada",
       category: "moda",
       composition: "Seda / Poliéster",
-      image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1974"
+      image: "github.com/dmonr1/textil-montalvan/blob/main/assets/imgs/catalogo/paño-italiano.jpg?raw=true"
     },
     {
       name: "Tul Bordado",
       category: "moda",
       composition: "Poliéster",
-      image: "https://images.unsplash.com/photo-1602526217038-7e95e6fcd508?q=80&w=1974"
+      image: "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/tul-bordado.jpg"
     }
   ];
 
