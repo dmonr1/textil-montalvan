@@ -20,6 +20,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (header) header.classList.add('show');
 
+  // ============================
+// HERO AUTO SLIDER
+// ============================
+
+const heroA = document.getElementById("heroImageA");
+const heroB = document.getElementById("heroImageB");
+
+const heroImages = [
+  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/pexels-blonde-1845052_1920.jpg",
+  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/gasa-sublimada.jpg",
+  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/paño-italiano.jpg"
+];
+
+let heroIndex = 0;
+let isHeroAActive = true;
+
+setInterval(() => {
+
+  heroIndex = (heroIndex + 1) % heroImages.length;
+
+  const activeImage = isHeroAActive ? heroA : heroB;
+  const nextImage = isHeroAActive ? heroB : heroA;
+
+  const img = new Image();
+  img.src = heroImages[heroIndex];
+
+  img.onload = () => {
+    nextImage.src = heroImages[heroIndex];
+    nextImage.classList.add("active");
+    activeImage.classList.remove("active");
+    isHeroAActive = !isHeroAActive;
+  };
+
+}, 5000);
+
   const menu = document.querySelector(".menu");
   const menuItems = document.querySelectorAll(".menu > li > a");
   const menuLine = document.querySelector(".menu-line");

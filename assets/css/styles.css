@@ -3266,6 +3266,26 @@ footer strong {
     color: white;
 }
 
+/* Imágenes superpuestas */
+.tm-hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    z-index: 0;
+}
+
+.tm-hero-bg.active {
+    opacity: 1;
+}
+
+.tm-hero-title,
+.tm-hero-bottom {
+    position: relative;
+    z-index: 2;
+}
 @font-face {
     font-family: "TM-BackOne";
     src: url("../fonts/RCLBackOne-Regular-BF6953473dd986f.otf") format("opentype");
@@ -3373,7 +3393,7 @@ footer strong {
     background: #f8f8f8;
 }
 
-.tm-split-title { 
+.tm-split-title {
     font-size: 32px;
     margin-bottom: 30px;
     letter-spacing: 3px;
