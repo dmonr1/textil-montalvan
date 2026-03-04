@@ -2,37 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const header = document.querySelector('header');
 
+  const logo = document.getElementById("site-logo");
+
+  const logoBlanco = "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/logo-header-removebg-preview.png";
+  const logoNegro = "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/logo-header-negro.png";
+
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 100) {
       header.classList.add("scrolled");
+      if (logo) logo.src = logoNegro;
     } else {
       header.classList.remove("scrolled");
+      if (logo) logo.src = logoBlanco;
     }
   });
+
   if (header) header.classList.add('show');
-
-  const cards = document.querySelectorAll('.card-mv');
-
-  if (cards.length > 0) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    cards.forEach(card => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(40px)";
-      card.style.transition = "0.6s ease";
-      observer.observe(card);
-    });
-  }
-
 
   const menu = document.querySelector(".menu");
   const menuItems = document.querySelectorAll(".menu > li > a");
@@ -122,6 +108,90 @@ document.addEventListener("DOMContentLoaded", () => {
       closeSearchBar();
     }
   });
+
+  const items = document.querySelectorAll(".tm-fabric-list li");
+  const thumb = document.getElementById("tmThumb");
+  const desc = document.getElementById("tmThumbDesc");
+  const imageContainer = document.querySelector(".tm-image-container");
+
+  const imageA = document.getElementById("tmImageA");
+  const imageB = document.getElementById("tmImageB");
+
+  let isImageAActive = true;
+
+  let currentImage = imageA.src;
+  let currentHoverImage = imageA.src;
+
+  // Si hay lista, inicializar hover con el primero
+  if (items.length > 0) {
+    currentHoverImage = items[0].dataset.hover || items[0].dataset.img;
+  }
+
+  // =========================
+  // CAMBIO DESDE LISTA
+  // =========================
+
+  if (items.length > 0) {
+    items[0].classList.add("active");
+  }
+  
+  items.forEach(item => {
+
+    item.addEventListener("mouseenter", () => {
+  
+      // Quitar active anterior
+      items.forEach(i => i.classList.remove("active"));
+  
+      // Activar el actual
+      item.classList.add("active");
+  
+      currentImage = item.dataset.img;
+      currentHoverImage = item.dataset.hover || item.dataset.img;
+  
+      changeImage(currentImage);
+  
+      thumb.src = item.dataset.thumb;
+      desc.textContent = item.dataset.desc;
+  
+    });
+  
+  });
+
+  // =========================
+  // HOVER EN IMAGEN DERECHA
+  // =========================
+  imageContainer.addEventListener("mouseenter", () => {
+    changeImage(currentHoverImage);
+  });
+
+  imageContainer.addEventListener("mouseleave", () => {
+    changeImage(currentImage);
+  });
+
+  // =========================
+  // FUNCIÓN CROSSFADE REAL
+  // =========================
+  function changeImage(newSrc) {
+
+    const activeImage = isImageAActive ? imageA : imageB;
+    const nextImage = isImageAActive ? imageB : imageA;
+
+    if (activeImage.src.includes(newSrc)) return;
+
+    // Precargar antes de mostrar
+    const img = new Image();
+    img.src = newSrc;
+
+    img.onload = () => {
+      nextImage.src = newSrc;
+
+      nextImage.classList.add("active");
+      activeImage.classList.remove("active");
+
+      isImageAActive = !isImageAActive;
+    };
+
+  }
 
   const products = [
     // TELAS DE PUNTO
