@@ -3310,6 +3310,20 @@ footer strong {
     opacity: 1;
 }
 
+/* =========================
+   GRID SCROLL ANIMATION
+========================= */
+
+.catalog-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.catalog-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 @font-face {
     font-family: "TM-BackOne";
     src: url("../fonts/RCLBackOne-Regular-BF6953473dd986f.otf") format("opentype");
@@ -3399,6 +3413,8 @@ footer strong {
     height: 80vh;
     width: 100%;
     overflow: hidden;
+    z-index: 9999;
+    position: relative;
 }
 
 .tm-split-left {

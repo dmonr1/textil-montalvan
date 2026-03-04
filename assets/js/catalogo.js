@@ -451,10 +451,38 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+  
       renderProducts(btn.dataset.filter);
+  
+      initScrollAnimation(); // ← SIN setTimeout
     });
   });
 
   renderProducts("all");
+  initScrollAnimation();
+  
+  function initScrollAnimation() {
 
+    const cards = document.querySelectorAll('.catalog-card');
+  
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+  
+          const card = entry.target;
+          const index = [...cards].indexOf(card);
+  
+          setTimeout(() => {
+            card.classList.add('show');
+          }, index * 120);
+  
+          obs.unobserve(card);
+        }
+      });
+    }, { threshold: 0.15 });
+  
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  }
 });
