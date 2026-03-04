@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  window.addEventListener("load", () => {
+    const hero = document.querySelector(".tm-hero");
+    hero.classList.add("loaded");
+  });
+
   const header = document.querySelector('header');
 
   const logo = document.getElementById("site-logo");
@@ -21,39 +26,39 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) header.classList.add('show');
 
   // ============================
-// HERO AUTO SLIDER
-// ============================
+  // HERO AUTO SLIDER
+  // ============================
 
-const heroA = document.getElementById("heroImageA");
-const heroB = document.getElementById("heroImageB");
+  const heroA = document.getElementById("heroImageA");
+  const heroB = document.getElementById("heroImageB");
 
-const heroImages = [
-  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/pexels-blonde-1845052_1920.jpg",
-  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/gasa-sublimada.jpg",
-  "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/paño-italiano.jpg"
-];
+  const heroImages = [
+    "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/pexels-blonde-1845052_1920.jpg",
+    "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/modelo-fondo-2.jpg",
+    "https://raw.githubusercontent.com/dmonr1/textil-montalvan/refs/heads/main/assets/imgs/catalogo/modelo-fondo-3.jpg"
+  ];
 
-let heroIndex = 0;
-let isHeroAActive = true;
+  let heroIndex = 0;
+  let isHeroAActive = true;
 
-setInterval(() => {
+  setInterval(() => {
 
-  heroIndex = (heroIndex + 1) % heroImages.length;
+    heroIndex = (heroIndex + 1) % heroImages.length;
 
-  const activeImage = isHeroAActive ? heroA : heroB;
-  const nextImage = isHeroAActive ? heroB : heroA;
+    const activeImage = isHeroAActive ? heroA : heroB;
+    const nextImage = isHeroAActive ? heroB : heroA;
 
-  const img = new Image();
-  img.src = heroImages[heroIndex];
+    const img = new Image();
+    img.src = heroImages[heroIndex];
 
-  img.onload = () => {
-    nextImage.src = heroImages[heroIndex];
-    nextImage.classList.add("active");
-    activeImage.classList.remove("active");
-    isHeroAActive = !isHeroAActive;
-  };
+    img.onload = () => {
+      nextImage.src = heroImages[heroIndex];
+      nextImage.classList.add("active");
+      activeImage.classList.remove("active");
+      isHeroAActive = !isHeroAActive;
+    };
 
-}, 5000);
+  }, 5000);
 
   const menu = document.querySelector(".menu");
   const menuItems = document.querySelectorAll(".menu > li > a");
@@ -169,27 +174,27 @@ setInterval(() => {
   if (items.length > 0) {
     items[0].classList.add("active");
   }
-  
+
   items.forEach(item => {
 
     item.addEventListener("mouseenter", () => {
-  
+
       // Quitar active anterior
       items.forEach(i => i.classList.remove("active"));
-  
+
       // Activar el actual
       item.classList.add("active");
-  
+
       currentImage = item.dataset.img;
       currentHoverImage = item.dataset.hover || item.dataset.img;
-  
+
       changeImage(currentImage);
-  
+
       thumb.src = item.dataset.thumb;
       desc.textContent = item.dataset.desc;
-  
+
     });
-  
+
   });
 
   // =========================
@@ -227,6 +232,108 @@ setInterval(() => {
     };
 
   }
+
+  const categories = document.querySelectorAll(".catalog-categories button");
+  const categoriesWrapper = document.querySelector(".catalog-categories");
+
+  function moveIndicator(button) {
+    const rect = button.getBoundingClientRect();
+    const parentRect = categoriesWrapper.getBoundingClientRect();
+
+    categoriesWrapper.style.setProperty(
+      "--indicator-left",
+      rect.left - parentRect.left + "px"
+    );
+    categoriesWrapper.style.setProperty(
+      "--indicator-width",
+      rect.width + "px"
+    );
+
+    const indicator = categoriesWrapper.querySelector("::after");
+  }
+
+  function updateIndicator(button) {
+    const rect = button.getBoundingClientRect();
+    const parentRect = categoriesWrapper.getBoundingClientRect();
+
+    categoriesWrapper.style.setProperty("--left", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--width", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("padding-bottom", "15px");
+    categoriesWrapper.style.position = "relative";
+
+    categoriesWrapper.style.setProperty("--indicator-left", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--indicator-width", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("--x", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--w", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("--indicatorX", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--indicatorW", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("--indicator-left", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--indicator-width", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("position", "relative");
+    categoriesWrapper.style.setProperty("padding-bottom", "15px");
+
+    categoriesWrapper.style.setProperty("--indicator-left", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--indicator-width", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("position", "relative");
+
+    categoriesWrapper.style.setProperty("left", "2px");
+
+    categoriesWrapper.style.setProperty("width", "100%");
+
+    categoriesWrapper.style.setProperty("overflow", "visible");
+
+    categoriesWrapper.style.setProperty("z-index", "1");
+
+    categoriesWrapper.style.setProperty("transition", "all 0.3s ease");
+
+    categoriesWrapper.style.setProperty("position", "relative");
+
+    categoriesWrapper.style.setProperty("padding-bottom", "0px");
+
+    categoriesWrapper.style.setProperty("border-bottom", "1px solid #eee");
+
+    categoriesWrapper.style.setProperty("--indicator-left", rect.left - parentRect.left + "px");
+    categoriesWrapper.style.setProperty("--indicator-width", rect.width + "px");
+
+    categoriesWrapper.style.setProperty("background-position", "0 100%");
+
+    categoriesWrapper.style.setProperty("background-repeat", "no-repeat");
+
+    categoriesWrapper.style.setProperty(
+      "background-image",
+      `linear-gradient(#111,#111)`
+    );
+
+    categoriesWrapper.style.setProperty(
+      "background-size",
+      rect.width + "px 3px"
+    );
+
+    categoriesWrapper.style.setProperty(
+      "background-position",
+      rect.left - parentRect.left + "px 100%"
+    );
+  }
+
+  categories.forEach(button => {
+    button.addEventListener("click", () => {
+      categories.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+      updateIndicator(button);
+    });
+  });
+
+  /* Inicializar */
+  window.addEventListener("load", () => {
+    const active = document.querySelector(".catalog-categories button.active");
+    if (active) updateIndicator(active);
+  });
 
   const products = [
     // TELAS DE PUNTO
